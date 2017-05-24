@@ -20,7 +20,7 @@
 #include <libsig_comp.h>
 #include <connection.h>
 
-#define CAID_LIST std::slist<uint16_t>
+#define CAID_LIST std::list<uint16_t>
 
 #ifndef DMX_FILTER_SIZE
 #define DMX_FILTER_SIZE   16
@@ -301,8 +301,7 @@ public:
 	bool usePMT() const { return !(m_flags & dxNoDVB); }
 	bool isHidden() const { return m_flags & dxDontshow; }
 
-	CAID_LIST m_ca;
-
+	
 	virtual ~eDVBService();
 	
 	eDVBService &operator=(const eDVBService &);
